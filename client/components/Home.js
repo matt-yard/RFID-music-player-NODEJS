@@ -1,9 +1,10 @@
 import React from "react";
+import SearchBar from "./SearchBar";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="search-bar-container">
+      <SearchBar />
     </div>
   );
 };
