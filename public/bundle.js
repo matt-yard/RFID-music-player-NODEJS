@@ -2516,6 +2516,21 @@ const initState = {};
 
 /***/ }),
 
+/***/ "./ignoreme.js":
+/*!*********************!*\
+  !*** ./ignoreme.js ***!
+  \*********************/
+/***/ ((module) => {
+
+const clientId = "0f216e62e32845428f7f48826fcc89c2";
+const clientSecret = "7fbf811267ee4d208671f078942a4181";
+module.exports = {
+  clientSecret,
+  clientId
+};
+
+/***/ }),
+
 /***/ "./util/Spotify.js":
 /*!*************************!*\
   !*** ./util/Spotify.js ***!
@@ -2524,11 +2539,16 @@ const initState = {};
 
 const SpotifyWebApi = __webpack_require__(/*! spotify-web-api-node */ "./node_modules/spotify-web-api-node/src/client.js");
 
+const {
+  clientId,
+  clientSecret
+} = __webpack_require__(/*! ../ignoreme */ "./ignoreme.js");
+
 const scopes = ["ugc-image-upload", "user-read-playback-state", "user-modify-playback-state", "user-read-currently-playing", "streaming", "app-remote-control", "user-read-email", "user-read-private", "playlist-read-collaborative", "playlist-modify-public", "playlist-read-private", "playlist-modify-private", "user-library-modify", "user-library-read", "user-top-read", "user-read-playback-position", "user-read-recently-played", "user-follow-read", "user-follow-modify"];
 const spotifyApi = new SpotifyWebApi({
   redirectUri: "http://localhost:8080/callback",
-  clientId: "0f216e62e32845428f7f48826fcc89c2",
-  clientSecret: "7fbf811267ee4d208671f078942a4181"
+  clientId: clientId,
+  clientSecret: clientSecret
 });
 module.exports = {
   spotifyApi,

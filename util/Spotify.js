@@ -1,4 +1,5 @@
 const SpotifyWebApi = require("spotify-web-api-node");
+const { clientId, clientSecret } = require("../ignoreme");
 
 const scopes = [
   "ugc-image-upload",
@@ -24,8 +25,8 @@ const scopes = [
 
 const spotifyApi = new SpotifyWebApi({
   redirectUri: "http://localhost:8080/callback",
-  clientId: "0f216e62e32845428f7f48826fcc89c2",
-  clientSecret: "7fbf811267ee4d208671f078942a4181",
+  clientId: clientId,
+  clientSecret: clientSecret,
 });
 
 module.exports = { spotifyApi, scopes };
